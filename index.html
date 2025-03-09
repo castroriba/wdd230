@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD 230 - Web Frontend Development Course Assignment Portal">
+  <meta name="author" content="Castro Oriba">
+  <title>Castro Oriba - WDD 230 - Web Frontend Development</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+
+  <header>
+    <img src="images/Image1.jpeg" alt="Your Profile Image">
+    <span>Castro Oriba</span>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Chamber</a></li>
+      <li><a href="#">Site Plan</a></li>
+      <li><a href="#">Form</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Learning Activities</h2>
+      <ul class="learning-activities">
+        <li>W01: Your Course Home Page</li>
+        <li>W02: Building Your Portfolio</li>
+        <li>W03: Introduction to Responsive Design</li>
+        <li>W04: CSS Grid Layout</li>
+        <li>W05: JavaScript and DOM Manipulation</li>
+        <li>W06: Accessibility and Web Best Practices</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Information</h2>
+      <ul class="information-list">
+        <li><span>Location:</span> Kampala, Uganda</li>
+        <li><span>Temperature:</span> 32°C</li>
+        <li><span>Page Visits:</span> 29</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Castro Oriba, Uganda</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/getDates.js"></script>
+</body>
+</html>

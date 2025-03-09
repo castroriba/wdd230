@@ -1,0 +1,30 @@
+/* larger.css */
+@media screen and (min-width: 768px) {
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+  
+    .card {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    nav ul li {
+      margin: 0;
+    }
+  
+    nav ul li a {
+      font-size: 1.2rem;
+    }
+  }
+  

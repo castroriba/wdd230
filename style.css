@@ -1,0 +1,44 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #4A90E2;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  header h1 {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  h2 {
+    color: #4A90E2;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  footer {
+    background-color: #4A90E2;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  

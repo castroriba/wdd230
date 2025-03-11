@@ -1,0 +1,51 @@
+/* Apply a custom normalization */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: left;
+  }
+  
+  /* Style the callout container */
+  .callout {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Two-column layout for the main section */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  h2 {
+    grid-column: span 2;
+  }
+  
+  /* Styling for the banner */
+  .banner {
+    background-color: #ff9900;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Footer alignment */
+  footer {
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  

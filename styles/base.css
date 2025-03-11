@@ -1,165 +1,86 @@
-/* base.css */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #00695c;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  
-  header img {
-    width: 120px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-  }
-  
-  header span {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  nav {
-    background-color: #004d40;
-    padding: 10px 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #555;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hamburger Menu */
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #hamburger {
+      display: block;
   }
   
   nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      width: 200px;
+      padding: 10px;
+      border-radius: 5px;
   }
-  
-  nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  nav ul li a:hover {
-    color: #cfd8dc;
-    transform: scale(1.1);
-  }
-  
-  main {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 15px;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .card h2 {
-    font-size: 1.8rem;
-    color: #00796b;
-    border-bottom: 2px solid #00796b;
-    padding-bottom: 10px;
-  }
-  
-  .card ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .card ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .card ul li:last-child {
-    border-bottom: none;
-  }
-  
-  footer {
-    background-color: #004d40;
-    color: white;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  footer p {
-    margin: 5px 0;
-  }
-  
-  footer p#year {
-    font-weight: bold;
-  }
-  
-  footer p#lastModified {
-    font-size: 0.9rem;
-    font-style: italic;
-  }
-  
-  /* Learning Activities */
-  ul.learning-activities {
-    padding: 0;
-  }
-  
-  ul.learning-activities li {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  /* Information Section */
-  ul.information-list {
-    padding: 0;
-    list-style: none;
-  }
-  
-  ul.information-list li {
-    font-size: 1.2rem;
-    padding: 8px 0;
-  }
-  
-  ul.information-list li span {
-    font-weight: bold;
-  }
-  
-  /* Footer Responsive Design */
-  @media screen and (min-width: 768px) {
-    main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-    }
-  
-    nav ul {
+
+  nav ul.open {
       display: flex;
-      justify-content: center;
-    }
-  
-    nav ul li {
-      margin: 0 25px;
-    }
-  
-    header span {
-      font-size: 2.5rem;
-    }
-  
-    .card {
-      padding: 30px;
-    }
   }
-  
+}

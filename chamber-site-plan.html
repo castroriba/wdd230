@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamber of Commerce Site Plan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon-standard.png" type="image/x-icon">
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="Chamber of Commerce Site Plan">
+    <meta property="og:description" content="Promoting business in Carlsbad through resources, networking, and community involvement.">
+    <meta property="og:image" content="images/social-preview.png">
 </head>
 <body>
     <header>
         <h1>Chamber of Commerce Site Plan</h1>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav id="mainMenu" class="hidden">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle">🌙</button>
     </header>
 
     <!-- Site Name Section -->
@@ -75,6 +89,21 @@
     <footer>
         <p>Created for WDD230 - Chamber of Commerce Site Plan</p>
     </footer>
+
+    <script>
+        // JavaScript for Hamburger Menu
+        function toggleMenu() {
+            var menu = document.getElementById('mainMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // JavaScript for Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
-

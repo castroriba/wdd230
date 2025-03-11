@@ -79,3 +79,87 @@ nav {
 .dark-mode header {
   background-color: #444;
 }
+/* Normalize CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #ffffff; /* light background for default mode */
+    color: #333333; /* dark text */
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #4CAF50; /* Green background */
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+button.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    display: none;
+}
+
+#mainMenu.hidden {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#darkModeToggle {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+}
+
+.dark-mode {
+    background-color: #333; /* dark background for dark mode */
+    color: #fff; /* light text for dark mode */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* show hamburger menu on mobile */
+    }
+
+    #mainMenu {
+        display: none;
+    }
+
+    #mainMenu.hidden {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}

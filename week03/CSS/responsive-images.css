@@ -1,0 +1,11 @@
+/* Make the image container responsive */
+.hero {
+    max-width: 100%;
+    display: block;
+}
+
+/* Ensure images take the full width of their container */
+img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+}

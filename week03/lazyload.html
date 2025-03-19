@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Load Demonstration</title>
+    <meta name="author" content="Castro Oriba">
+    <link rel="stylesheet" href="css/lazyload.css">
+    <script defer src="scripts/lazyload.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Lazy Load Demonstration</h1>
+    </header>
+    
+    <main>
+        <picture>
+            <source srcset="images/landscape.webp" type="image/webp">
+            <img src="images/landscape.jpg" alt="Lazy Loaded Image 1" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="images/landscape2.webp" type="image/webp">
+            <img src="images/landscape2.jpg" alt="Lazy Loaded Image 2" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="images/landscape3.webp" type="image/webp">
+            <img src="images/landscape3.jpg" alt="Lazy Loaded Image 3" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="images/landscape4.webp" type="image/webp">
+            <img src="images/landscape4.jpg" alt="Lazy Loaded Image 4" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="images/landscape5.webp" type="image/webp">
+            <img src="images/landscape.jpg" alt="Lazy Loaded Image 5" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="images/landscape6.webp" type="image/webp">
+            <img src="images/landscape6.webp" alt="Lazy Loaded Image 6" loading="lazy">
+        </picture>
+    </main>
+
+    <footer>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

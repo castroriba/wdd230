@@ -27,19 +27,31 @@
     </header>
 
     <main>
+        <!-- Hero Image with Overlay (Responsive) -->
+        <section class="hero-container">
+            <picture>
+                <source srcset="images/temple-small.webp" media="(max-width: 500px)">
+                <source srcset="images/temple-large.webp" media="(max-width: 960px)">
+                <img src="images/temple-large.webp" alt="Favorite Latter-day Temple">
+            </picture>
+            <div class="overlay">[Modular Temple]</div>
+        </section>
+
+        <!-- Learning Activities List -->
         <section class="card">
             <h2>Learning Activities</h2>
             <ul class="learning-activities">
                 <li>W01: Your Course Home Page</li>
                 <li>W02: Building Your Portfolio</li>
                 <li>W03: <a href="week03/lazyload.html">Lazy Load Demonstration</a></li>
-                <li>W03: <a href="week03/responsive-images.html">Responsive Images - Week 03 Activity</a></li> <!-- New link -->
+                <li>W03: <a href="week03/responsive-images.html">Responsive Images - Week 03 Activity</a></li>
                 <li>W04: CSS Grid Layout</li>
                 <li>W05: JavaScript and DOM Manipulation</li>
                 <li>W06: Accessibility and Web Best Practices</li>
             </ul>
         </section>
 
+        <!-- Information Section with Visit Counter -->
         <section class="card">
             <h2>Information</h2>
             <ul class="information-list">
@@ -48,6 +60,13 @@
                 <li><span>Page Visits:</span> <span id="visits">0</span></li>
             </ul>
         </section>
+
+        <!-- Google Map Embed (Lazy Loading) -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30189.26251462309!2d32.6387!3d0.3972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzEnNTcuNyJX!5e0!3m2!1sen!2s!4v1675032398348"  
+            allowfullscreen 
+            loading="lazy">
+        </iframe>
     </main>
 
     <footer>

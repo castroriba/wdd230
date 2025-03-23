@@ -163,3 +163,35 @@ nav ul li a {
         margin: 10px 0;
     }
 }
+/* Sidebar Layout with CSS Grid */
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Sidebar 1/4, Content 3/4 */
+  gap: 2rem;
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1); /* Hover effect for images */
+}
+
+@media (max-width: 768px) {
+  main {
+      grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}

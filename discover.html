@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the Chamber's Area">
+    <meta name="author" content="Castro Oriba">
+    <title>Chamber Discover - Castro Oriba</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Header and Navigation (Same as Home Page) -->
+    <header>
+        <img src="images/Image1.jpeg" alt="Castro Oriba" width="50" height="50">
+        <span>Castro Oriba</span>
+        <nav>
+            <button id="hamburger" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Site Plan</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sidebar Layout with CSS Grid -->
+        <div class="sidebar">
+            <section class="info">
+                <h3>Chamber Information</h3>
+                <ul>
+                    <li><strong>Population:</strong> 1,500,000</li>
+                    <li><strong>Area:</strong> 200 km²</li>
+                    <li><strong>Attractions:</strong> National Park, Museums</li>
+                    <li><strong>Events:</strong> Annual Chamber Festival</li>
+                </ul>
+            </section>
+
+            <section class="visitor-message">
+                <h3>Welcome Message</h3>
+                <p id="visitor-message">Loading...</p>
+            </section>
+        </div>
+
+        <div class="main-content">
+            <!-- Gallery Section with Lazy Loading -->
+            <section class="gallery">
+                <h3>Local Photos</h3>
+                <img src="images/photo1.webp" alt="Local Scene 1" class="lazy-load" data-src="images/photo1.webp">
+                <img src="images/photo2.webp" alt="Local Scene 2" class="lazy-load" data-src="images/photo2.webp">
+                <img src="images/photo3.webp" alt="Local Scene 3" class="lazy-load" data-src="images/photo3.webp">
+                <img src="images/photo4.webp" alt="Local Scene 4" class="lazy-load" data-src="images/photo4.webp">
+                <img src="images/photo5.webp" alt="Local Scene 5" class="lazy-load" data-src="images/photo5.webp">
+                <img src="images/photo6.webp" alt="Local Scene 6" class="lazy-load" data-src="images/photo6.webp">
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (Same as Home Page) -->
+    <footer>
+        <p>&copy; <span id="year"></span> Castro Oriba, Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>

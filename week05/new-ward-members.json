@@ -1,0 +1,16 @@
+{
+    "family": {
+      "familyName": "Oriba",
+      "moveInDate": "2023-10-23",
+      "numberOfPeople": 2,
+      "visitedByBishopric": false,
+      "members": [
+        {
+          "name": "Amara",
+          "gender": "Female",
+          "birthdate": "2025-06-18"
+        }
+      ]
+    }
+  }
+  

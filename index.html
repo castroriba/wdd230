@@ -1,88 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 230 - Web Frontend Development Course Assignment Portal">
-    <meta name="author" content="Castro Oriba">
-    <title>Castro Oriba - WDD 230 - Web Frontend Development</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD 230 - Web Frontend Development Course Assignment Portal" />
+  <meta name="author" content="Castro Oriba" />
+  <meta property="og:title" content="Castro Oriba - WDD 230 Web Frontend Development" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourgithubcastroriba.github.io/wdd230/images/og-image.jpg" />
+  <meta property="og:url" content="https://yourgithubcastroriba.github.io/wdd230/" />
+  <title>Castro Oriba - WDD 230 - Web Frontend Development</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <script defer src="week05/weather.html"></script>
+  <script defer src="data/links.js"></script>
 </head>
 <body>
 
-    <header>
-        <img src="images/Image1.jpeg" alt="Castro Oriba" width="50" height="50">
-        <span>Castro Oriba</span>
-        <nav>
-            <button id="hamburger" aria-label="Toggle menu">☰</button>
-            <ul id="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">Site Plan</a></li>
-                <li><a href="form.html">Form</a></li> <!-- Added link to form.html -->
-            </ul>
-            <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
-        </nav>
-    </header>
+  <header>
+    <img src="images/Image1.jpeg" alt="Castro Oriba" width="50" height="50" />
+    <span>Castro Oriba</span>
+    <nav>
+      <button id="hamburger" aria-label="Toggle menu">☰</button>
+      <ul id="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">Site Plan</a></li>
+        <li><a href="form.html">Form</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
 
-    <main>
-        <!-- Hero Image with Overlay (Responsive) -->
-        <section class="hero-container">
-            <picture>
-                <source srcset="images/temple-small.webp" media="(max-width: 500px)">
-                <source srcset="images/temple-large.webp" media="(max-width: 960px)">
-                <img src="images/temple-large.webp" alt="Favorite Latter-day Temple">
-            </picture>
-            <div class="overlay">[Modular Temple]</div>
-        </section>
+  <main>
+    <!-- Hero Image with Overlay (Responsive) -->
+    <section class="hero-container">
+      <picture>
+        <source srcset="images/temple-small.webp" media="(max-width: 500px)" />
+        <source srcset="images/temple-large.webp" media="(max-width: 960px)" />
+        <img src="images/temple-large.webp" alt="Favorite Latter-day Temple" />
+      </picture>
+      <div class="overlay">[Modular Temple]</div>
+    </section>
 
-        <!-- Learning Activities List -->
-        <section class="card">
-            <h2>Learning Activities</h2>
-            <ul class="learning-activities">
-                <li>W01: Your Course Home Page</li>
-                <li>W02: Building Your Portfolio</li>
-                <li>W03: <a href="week03/lazyload.html">Lazy Load Demonstration</a></li>
-                <li>W03: <a href="week03/responsive-images.html">Responsive Images - Week 03 Activity</a></li>
-                <li>W04: CSS Grid Layout</li>
-                <li>W05: JavaScript and DOM Manipulation</li>
-                <li>W06: Accessibility and Web Best Practices</li>
-                <!-- Add the link to your CodePen -->
-                <li><a href="https://codepen.io/Castro-Oriba/pen/OPJEbxR" target="_blank">CSS Pseudo-Classes Example on CodePen</a></li>
-                <!-- Link to your table activity -->
-                <li>W04: <a href="week04/tablebuild.html">HTML Tables for Data Presentation</a></li>
-                <!-- Link to your JSON file -->
-                <li><a href="week05/new-ward-members.json" target="_blank">JSON File: New Ward Members</a></li>
-                <!-- Link to your Prophets page -->
-                <li>W05: <a href="week05/prophets.html">Latter-day Prophets</a></li> <!-- Added link to prophets.html -->
-                <!-- Add the link to your Weather Activity -->
-                <li>W05: <a href="week05/weather.html">Weather Activity - Kampala, Uganda</a></li> <!-- New link added -->
-            </ul>
-        </section>
+    <!-- Weather Card -->
+    <section class="card">
+      <h2>Weather</h2>
+      <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
+      <p><strong>Condition:</strong> <span id="description"></span></p>
+      <img id="weather-icon" src="" alt="Weather Icon" />
+    </section>
 
-        <!-- Information Section with Visit Counter -->
-        <section class="card">
-            <h2>Information</h2>
-            <ul class="information-list">
-                <li><span>Location:</span> Kampala, Uganda</li>
-                <li><span>Temperature:</span> 32°C</li>
-                <li><span>Page Visits:</span> <span id="visits">0</span></li>
-            </ul>
-        </section>
+    <!-- Learning Activities from JSON -->
+    <section class="card">
+      <h2>Learning Activities</h2>
+      <ul class="learning-activities" id="activities">
+        <!-- Dynamic content will be inserted here by links.js -->
+      </ul>
+    </section>
 
-        <!-- Google Map Embed (Lazy Loading) -->
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30189.26251462309!2d32.6387!3d0.3972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzEnNTcuNyJX!5e0!3m2!1sen!2s!4v1675032398348"  
-            allowfullscreen 
-            loading="lazy">
-        </iframe>
-    </main>
+    <!-- Information Section with Visit Counter -->
+    <section class="card">
+      <h2>Information</h2>
+      <ul class="information-list">
+        <li><span>Location:</span> Kampala, Uganda</li>
+        <li><span>Temperature:</span> 32°C</li>
+        <li><span>Page Visits:</span> <span id="visits">0</span></li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Castro Oriba, Uganda</p>
-        <p id="lastModified"></p>
-    </footer>
+    <!-- Google Map Embed (Lazy Loading) -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30189.26251462309!2d32.6387!3d0.3972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzEnNTcuNyJX!5e0!3m2!1sen!2s!4v1675032398348"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Castro Oriba, Uganda</p>
+    <p id="lastModified"></p>
+  </footer>
 
 </body>
 </html>

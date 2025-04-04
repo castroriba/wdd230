@@ -1,0 +1,58 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+/* Card grid styles */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual card styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    color: #333;
+}

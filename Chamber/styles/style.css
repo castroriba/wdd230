@@ -1,0 +1,320 @@
+/* ========== EXISTING STYLES (Already Provided) ========== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background-color: #0077cc;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+#hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#dark-mode-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #0077cc;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode header {
+  background-color: #444;
+}
+
+/* Normalize CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+button.hamburger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  display: none;
+}
+
+#mainMenu.hidden {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#darkModeToggle {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #ffffff;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #mainMenu {
+    display: none;
+  }
+
+  #mainMenu.hidden {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* Sidebar Layout with CSS Grid */
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== NEW STYLES FOR DIRECTORY PAGE ========== */
+
+/* Toggle Buttons */
+.view-toggle {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.view-toggle button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.view-toggle button:hover {
+  background-color: #005fa3;
+}
+
+/* Grid View */
+#members.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* List View */
+#members.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Member Card Styles */
+.member-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.member-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0077cc;
+}
+
+.member-card p {
+  margin: 0.3rem 0;
+}
+
+.member-card a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.member-card a:hover {
+  text-decoration: underline;
+}
+
+/* Membership Badges */
+.member-card::before {
+  content: attr(data-membership);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gold;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-bottom-right-radius: 10px;
+  text-transform: uppercase;
+}
+
+.member-card[data-membership="Silver"]::before {
+  background-color: silver;
+  color: #000;
+}
+
+.member-card[data-membership="Bronze"]::before {
+  background-color: #cd7f32;
+  color: #fff;
+}
+
+/* Error Message */
+.error {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-top: 2rem;
+}

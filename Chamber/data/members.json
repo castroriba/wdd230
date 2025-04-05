@@ -1,0 +1,61 @@
+{
+    "members": [
+      {
+        "name": "Sunrise Bakery",
+        "address": "123 Bread Lane, Kampala",
+        "phone": "256-700-123456",
+        "website": "https://sunrisebakery.ug",
+        "image": "sunrise.png",
+        "membership": "Gold"
+      },
+      {
+        "name": "Green Earth Landscaping",
+        "address": "45 Garden Street, Kampala",
+        "phone": "256-772-456789",
+        "website": "https://greenearth.ug",
+        "image": "greenearth.png",
+        "membership": "Silver"
+      },
+      {
+        "name": "Tech Solutions Ltd",
+        "address": "99 Innovation Hub, Kampala",
+        "phone": "256-703-999000",
+        "website": "https://techsolutions.ug",
+        "image": "techsolutions.png",
+        "membership": "Gold"
+      },
+      {
+        "name": "Classic Boutique",
+        "address": "7 Fashion Avenue, Kampala",
+        "phone": "256-701-678234",
+        "website": "https://classicboutique.ug",
+        "image": "classicboutique.png",
+        "membership": "Bronze"
+      },
+      {
+        "name": "Eco-Clean Services",
+        "address": "20 Cleanway Drive, Kampala",
+        "phone": "256-779-123321",
+        "website": "https://ecoclean.ug",
+        "image": "ecoclean.png",
+        "membership": "Silver"
+      },
+      {
+        "name": "FitLife Gym",
+        "address": "321 Health St, Kampala",
+        "phone": "256-706-234555",
+        "website": "https://fitlife.ug",
+        "image": "fitlife.png",
+        "membership": "Gold"
+      },
+      {
+        "name": "SmartTech Store",
+        "address": "88 Tech Plaza, Kampala",
+        "phone": "256-701-987654",
+        "website": "https://smarttech.ug",
+        "image": "smarttech.png",
+        "membership": "Bronze"
+      }
+    ]
+  }
+  

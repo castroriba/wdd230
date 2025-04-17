@@ -13,13 +13,14 @@ visitCount++;
 localStorage.setItem("visitCount", visitCount);
 
 // Display count
-document.getElementById("visits").textContent = visitCount;
+document.getElementById("visits")?.textContent = visitCount;
 
 // Update footer year dynamically
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year")?.textContent = new Date().getFullYear();
 
 // Update last modified date
-document.getElementById("lastModified").textContent = `Last modified: ${document.lastModified}`;
+document.getElementById("lastModified")?.textContent = `Last modified: ${document.lastModified}`;
+
 // Lazy load images
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll('.lazy-load');
@@ -57,12 +58,12 @@ localStorage.setItem('lastVisitDate', currentDate);
 const messageElement = document.getElementById('visitor-message');
 
 if (!visitDate) {
-    messageElement.textContent = 'Welcome! Let us know if you have any questions.';
+    messageElement?.textContent = 'Welcome! Let us know if you have any questions.';
 } else {
     const daysDifference = Math.floor((currentDate - visitDate) / (1000 * 3600 * 24));
     if (daysDifference < 1) {
-        messageElement.textContent = 'Back so soon! Awesome!';
+        messageElement?.textContent = 'Back so soon! Awesome!';
     } else {
-        messageElement.textContent = `You last visited ${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago.`;
+        messageElement?.textContent = `You last visited ${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago.`;
     }
 }

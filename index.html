@@ -49,6 +49,20 @@
       <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
       <p><strong>Condition:</strong> <span id="description"></span></p>
       <img id="weather-icon" src="" alt="Weather Icon" />
+      <h3>3-Day Forecast:</h3>
+      <ul id="forecast"></ul>
+    </section>
+
+    <!-- Spotlight Member Ads (Only Silver/Gold) -->
+    <section class="card" id="spotlight">
+      <h2>Spotlight Chamber Members</h2>
+      <div id="member-ads"></div>
+    </section>
+
+    <!-- Meet and Greet Banner (Visible on Mon, Tue, Wed) -->
+    <section id="meet-greet-banner" class="card">
+      <p>Join us for the Chamber of Commerce Meet and Greet on Wednesday at 7:00 p.m.!</p>
+      <button id="close-banner" aria-label="Close Banner">Close</button>
     </section>
 
     <!-- Learning Activities from JSON -->
@@ -81,6 +95,62 @@
     <p>&copy; <span id="year"></span> Castro Oriba, Uganda</p>
     <p id="lastModified"></p>
   </footer>
+
+  <script>
+    // Footer year and last modified
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
+
+    // Weather data integration (OpenWeatherMap)
+    const weatherAPIKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API Key
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Kampala&units=metric&appid=${weatherAPIKey}`;
+
+    fetch(weatherURL)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('temp').textContent = data.main.temp;
+        document.getElementById('description').textContent = data.weather[0].description;
+        document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+      });
+
+    // 3-Day Forecast
+    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=Kampala&units=metric&appid=${weatherAPIKey}`;
+    fetch(forecastURL)
+      .then(response => response.json())
+      .then(data => {
+        const forecastList = document.getElementById('forecast');
+        for (let i = 0; i < 3; i++) {
+          const forecastItem = document.createElement('li');
+          forecastItem.textContent = `${data.list[i * 8].dt_txt}: ${data.list[i * 8].main.temp}°C, ${data.list[i * 8].weather[0].description}`;
+          forecastList.appendChild(forecastItem);
+        }
+      });
+
+    // Spotlight Member Ads (Silver/Gold)
+    const memberAds = [
+      // Example JSON data for members with silver or gold membership
+      { name: "John Doe", membership: "silver", ad: "Check out John's business!" },
+      { name: "Jane Smith", membership: "gold", ad: "Join Jane's business for great deals!" }
+    ];
+
+    const memberAdsContainer = document.getElementById('member-ads');
+    memberAds.filter(member => member.membership === 'silver' || member.membership === 'gold')
+      .forEach(member => {
+        const adElement = document.createElement('div');
+        adElement.innerHTML = `<p>${member.name}: ${member.ad}</p>`;
+        memberAdsContainer.appendChild(adElement);
+      });
+
+    // Meet and Greet Banner
+    const today = new Date();
+    if (today.getDay() >= 1 && today.getDay() <= 3) {
+      document.getElementById('meet-greet-banner').style.display = 'block';
+    }
+
+    document.getElementById('close-banner').addEventListener('click', () => {
+      document.getElementById('meet-greet-banner').style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>

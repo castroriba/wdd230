@@ -11,9 +11,6 @@
   <meta property="og:url" content="https://yourgithubcastroriba.github.io/wdd230/" />
   <title>Castro Oriba - WDD 230 - Web Frontend Development</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <script defer src="week05/weather.html"></script>
-  <script defer src="data/links.js"></script>
 </head>
 <body>
 
@@ -33,7 +30,6 @@
   </header>
 
   <main>
-    <!-- Hero Image with Overlay (Responsive) -->
     <section class="hero-container">
       <picture>
         <source srcset="images/temple-small.webp" media="(max-width: 500px)" />
@@ -43,7 +39,7 @@
       <div class="overlay">[Modular Temple]</div>
     </section>
 
-    <!-- Weather Card -->
+    <!-- Weather Section -->
     <section class="card">
       <h2>Weather</h2>
       <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
@@ -53,27 +49,27 @@
       <ul id="forecast"></ul>
     </section>
 
-    <!-- Spotlight Member Ads (Only Silver/Gold) -->
+    <!-- Spotlight Section -->
     <section class="card" id="spotlight">
       <h2>Spotlight Chamber Members</h2>
       <div id="member-ads"></div>
     </section>
 
-    <!-- Meet and Greet Banner (Visible on Mon, Tue, Wed) -->
-    <section id="meet-greet-banner" class="card">
+    <!-- Meet and Greet Banner -->
+    <section id="meet-greet-banner" class="card" style="display: none;">
       <p>Join us for the Chamber of Commerce Meet and Greet on Wednesday at 7:00 p.m.!</p>
       <button id="close-banner" aria-label="Close Banner">Close</button>
     </section>
 
-    <!-- Learning Activities from JSON -->
+    <!-- Learning Activities -->
     <section class="card">
       <h2>Learning Activities</h2>
       <ul class="learning-activities" id="activities">
-        <!-- Dynamic content will be inserted here by links.js -->
+        <!-- Filled by links.js -->
       </ul>
     </section>
 
-    <!-- Information Section with Visit Counter -->
+    <!-- Info Section -->
     <section class="card">
       <h2>Information</h2>
       <ul class="information-list">
@@ -83,7 +79,7 @@
       </ul>
     </section>
 
-    <!-- Google Map Embed (Lazy Loading) -->
+    <!-- Google Map -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30189.26251462309!2d32.6387!3d0.3972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMzEnNTcuNyJX!5e0!3m2!1sen!2s!4v1675032398348"
       allowfullscreen
@@ -97,60 +93,66 @@
   </footer>
 
   <script>
-    // Footer year and last modified
+    // Footer Info
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-    // Weather data integration (OpenWeatherMap)
-    const weatherAPIKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API Key
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Kampala&units=metric&appid=${weatherAPIKey}`;
+    // Weather API
+    const apiKey = 'abcdef1234567890abcdef1234567890';
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Kampala&units=metric&appid=${apiKey}`;
+    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=Kampala&units=metric&appid=${apiKey}`;
 
     fetch(weatherURL)
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
-        document.getElementById('temp').textContent = data.main.temp;
+        document.getElementById('temp').textContent = data.main.temp.toFixed(1);
         document.getElementById('description').textContent = data.weather[0].description;
-        document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.getElementById('weather-icon').alt = data.weather[0].description;
       });
 
-    // 3-Day Forecast
-    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=Kampala&units=metric&appid=${weatherAPIKey}`;
     fetch(forecastURL)
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         const forecastList = document.getElementById('forecast');
-        for (let i = 0; i < 3; i++) {
-          const forecastItem = document.createElement('li');
-          forecastItem.textContent = `${data.list[i * 8].dt_txt}: ${data.list[i * 8].main.temp}°C, ${data.list[i * 8].weather[0].description}`;
-          forecastList.appendChild(forecastItem);
-        }
+        forecastList.innerHTML = '';
+        const dayIndexes = [8, 16, 24]; // Approx. 24 hrs apart
+        dayIndexes.forEach(i => {
+          const item = data.list[i];
+          const li = document.createElement('li');
+          li.textContent = `${new Date(item.dt_txt).toDateString()}: ${item.main.temp.toFixed(1)}°C, ${item.weather[0].description}`;
+          forecastList.appendChild(li);
+        });
       });
 
-    // Spotlight Member Ads (Silver/Gold)
-    const memberAds = [
-      // Example JSON data for members with silver or gold membership
-      { name: "John Doe", membership: "silver", ad: "Check out John's business!" },
-      { name: "Jane Smith", membership: "gold", ad: "Join Jane's business for great deals!" }
+    // Spotlight Members
+    const members = [
+      { name: "John Doe", membership: "silver", ad: "Visit John's Plumbing Services for great deals!" },
+      { name: "Jane Smith", membership: "gold", ad: "Join Jane's Art Studio this week!" },
+      { name: "Bob Brown", membership: "silver", ad: "Exclusive discounts at Bob’s Hardware." },
+      { name: "Lucy Lane", membership: "bronze", ad: "Visit Lucy’s Crafts (not eligible)" }
     ];
 
-    const memberAdsContainer = document.getElementById('member-ads');
-    memberAds.filter(member => member.membership === 'silver' || member.membership === 'gold')
-      .forEach(member => {
-        const adElement = document.createElement('div');
-        adElement.innerHTML = `<p>${member.name}: ${member.ad}</p>`;
-        memberAdsContainer.appendChild(adElement);
-      });
+    const eligibleMembers = members.filter(m => m.membership === 'silver' || m.membership === 'gold');
+    const randomMembers = eligibleMembers.sort(() => 0.5 - Math.random()).slice(0, 2);
+    const adContainer = document.getElementById('member-ads');
+    randomMembers.forEach(member => {
+      const div = document.createElement('div');
+      div.classList.add('spotlight');
+      div.innerHTML = `<p><strong>${member.name}</strong>: ${member.ad}</p>`;
+      adContainer.appendChild(div);
+    });
 
-    // Meet and Greet Banner
-    const today = new Date();
-    if (today.getDay() >= 1 && today.getDay() <= 3) {
+    // Meet and Greet Banner (Mon-Wed)
+    const today = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+    if (today >= 1 && today <= 3) {
       document.getElementById('meet-greet-banner').style.display = 'block';
     }
-
     document.getElementById('close-banner').addEventListener('click', () => {
       document.getElementById('meet-greet-banner').style.display = 'none';
     });
   </script>
 
+  <script defer src="data/links.js"></script>
 </body>
 </html>
